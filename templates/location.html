@@ -2,19 +2,53 @@
 {% block content %}
 <link href="../static/css/location.css" rel="stylesheet" type="text/css"/>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=844c1f31-f6a1-420f-899a-ed3e7de882b3&lang=ru_RU"
-            type="text/javascript"></script>
-<div class="container my-5">
-    <div id="map"></div>
-        <script type="text/javascript">
-            ymaps.ready(init);
-            function init(){
-                var myMap = new ymaps.Map("map", {
-                    center: [52.085679, 39.181116],
-                    zoom: 15.5
-                });
-        myMap.geoObjects
-            .add(new ymaps.Placemark([52.085679, 39.181116]));
-            }
-        </script>
+        type="text/javascript"></script>
+<section class="container location-hero surface-card surface-card--soft">
+    <div class="row align-items-center gy-4">
+        <div class="col-lg-8">
+            <h1 class="section-title mb-3">Как нас найти</h1>
+            <p class="section-subtitle">Мы находимся в самом сердце города. Приходите на завтрак, обед или ужин —
+                уютная атмосфера и приветливая команда встретят вас с порога.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+            <a href="tel:+74732070137" class="btn btn-brand">Позвонить нам</a>
+        </div>
     </div>
+</section>
+<section class="container location-layout">
+    <div class="row g-4">
+        <div class="col-lg-5">
+            <div class="location-card surface-card">
+                <h2 class="location-card__title">Мы ждем вас ежедневно</h2>
+                <ul class="location-card__list">
+                    <li><i class="bi bi-geo-alt"></i> Воронеж, ул. Блюда, 12</li>
+                    <li><i class="bi bi-clock"></i> Пн-Пт: 09:00–22:00, Сб-Вс: 10:00–23:00</li>
+                    <li><i class="bi bi-telephone"></i> <a href="tel:+74732070137">+7 (473) 207-01-37</a></li>
+                    <li><i class="bi bi-phone"></i> <a href="tel:+79202238060">+7 (920) 223-80-60</a></li>
+                </ul>
+                <p class="location-card__hint">Парковка доступна для гостей кафе. Если вы приезжаете компанией,
+                    забронируйте стол заранее.</p>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="map-wrapper surface-card">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    ymaps.ready(init);
+    function init(){
+        var myMap = new ymaps.Map("map", {
+            center: [52.085679, 39.181116],
+            zoom: 15.5,
+            controls: ['zoomControl', 'fullscreenControl']
+        });
+        myMap.geoObjects
+            .add(new ymaps.Placemark([52.085679, 39.181116], {
+                balloonContent: 'Домашняя кухня'
+            }));
+    }
+</script>
 {% endblock %}

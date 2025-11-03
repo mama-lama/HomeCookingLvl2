@@ -1,39 +1,88 @@
 {% extends "base.html" %}
 {% block content %}
 <link href="../static/css/index.css" rel="stylesheet" type="text/css"/>
-<div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="../static/img/templates/1.jpeg">
+<section class="hero container">
+    <div class="row align-items-center gy-5">
+        <div class="col-lg-5 col-md-6">
+            <div class="hero__content">
+                <span class="hero__badge">Уютное кафе со вкусом домашней кухни</span>
+                <h1 class="hero__title">Собирайтесь за столом и наслаждайтесь свежими блюдами</h1>
+                <p class="hero__subtitle">Каждый день мы готовим из отборных ингредиентов, чтобы вы могли
+                    почувствовать вкус дома — будь то деловой обед или семейный ужин.</p>
+                <div class="hero__actions d-flex flex-wrap align-items-center gap-3">
+                    <a href="/menu" class="btn btn-brand">Посмотреть меню</a>
+                    <a href="/location" class="hero__link"><i class="bi bi-geo-alt"></i> Как добраться</a>
+                </div>
+            </div>
         </div>
-        <div class="carousel-item">
-            <img src="../static/img/templates/8.jpeg">
-        </div>
-        <div class="carousel-item">
-            <img src="../static/img/templates/20.jpeg">
+        <div class="col-lg-7 col-md-6">
+            <div class="hero__visual surface-card surface-card--soft">
+                <div class="carousel slide hero__carousel" id="carouselControls" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../static/img/templates/1.jpeg" alt="Подача блюда">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../static/img/templates/8.jpeg" alt="Свежие салаты">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../static/img/templates/20.jpeg" alt="Домашние десерты">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Предыдущее</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Следующее</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-    <a href="#carouselControls" class="carousel-control-prev" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a href="#carouselControls" class="carousel-control-next" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </a>
-    <a href="#carouselControls" class="carousel-control-next" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </a>
-</div>
-<div class="container my-5">
-    <div class="row gy-5">
-        <div class="col-md-4 col-sm text-center">
-            <a href="/menu" class="btn btn-outline-success">Меню</a>
+</section>
+<section class="container highlight-section">
+    <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+            <div class="highlight-card surface-card">
+                <span class="highlight-card__icon"><i class="bi bi-emoji-smile"></i></span>
+                <h3 class="highlight-card__title">Домашняя атмосфера</h3>
+                <p class="highlight-card__text">Наслаждайтесь уютной атмосферой и внимательным сервисом — мы создаем
+                    пространство для теплых встреч с родными и друзьями.</p>
+                <a href="/gallery" class="highlight-card__link">Заглянуть в галерею</a>
+            </div>
         </div>
-        <div class="col-md-4 col-sm text-center">
-            <a href="/location" class="btn btn-outline-success">Месторасположение</a>
+        <div class="col-lg-4 col-md-6">
+            <div class="highlight-card surface-card">
+                <span class="highlight-card__icon"><i class="bi bi-basket"></i></span>
+                <h3 class="highlight-card__title">Свежие ингредиенты</h3>
+                <p class="highlight-card__text">Мы работаем только с проверенными поставщиками и готовим из сезонных
+                    продуктов, чтобы сохранить максимум пользы и вкуса.</p>
+                <a href="/menu" class="highlight-card__link">Изучить меню</a>
+            </div>
         </div>
-        <div class="col-md-4 col-sm text-center">
-            <a href="/gallery" class="btn btn-outline-success">Галерея</a>
+        <div class="col-lg-4 col-md-6">
+            <div class="highlight-card surface-card">
+                <span class="highlight-card__icon"><i class="bi bi-clock"></i></span>
+                <h3 class="highlight-card__title">Удобный формат</h3>
+                <p class="highlight-card__text">Заказывайте еду с собой или приходите на обед — мы готовим быстро, сохраняя
+                    авторские рецепты и традиционные вкусы.</p>
+                <a href="/location" class="highlight-card__link">Посмотреть на карте</a>
+            </div>
         </div>
     </div>
-</div>
+</section>
+<section class="container callout surface-card surface-card--soft">
+    <div class="row align-items-center gy-4">
+        <div class="col-lg-8">
+            <h2 class="section-title">Готовы попробовать?</h2>
+            <p class="section-subtitle">Забронируйте стол заранее или загляните на бизнес-ланч — мы с радостью
+                подготовим для вас лучшие блюда дня.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+            <a href="tel:+79202238060" class="btn btn-brand">Позвонить и заказать</a>
+        </div>
+    </div>
+</section>
 {% endblock %}

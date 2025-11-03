@@ -1,26 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
 <link href="../static/css/menu.css" rel="stylesheet" type="text/css"/>
-<center>
-    <div class="container">
-    {% for dish_name in dishes %}
-        <div class="row">
-            <h2>{{dish_name}}</h2>
-            {% for dish in dishes[dish_name] %}
-                <div class="col">
-                    <div class="block">
-                        <h4>{{dish[0]}}</h4>
-                        <img class="dish" src="{{dish[2]}}" alt="ошибка загрузки">
-                        <h4>{{dish[3]}}₽</h4>
-                        <h6>{{dish[4]}}</h6>
-                        <div class="about">
-                            <p>{{dish[1]}}</p>
-                        </div>
+<section class="container menu-hero surface-card surface-card--soft">
+    <div class="row align-items-center gy-4">
+        <div class="col-lg-8">
+            <h1 class="section-title mb-3">Меню</h1>
+            <p class="section-subtitle">Мы заботимся о том, чтобы каждое блюдо радовало вкусом и выглядело
+                безупречно. Выбирайте классику или попробуйте сезонные новинки — повара готовят их прямо перед
+                подачей.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+            <a href="tel:+74732070137" class="btn btn-brand">Заказать по телефону</a>
+        </div>
+    </div>
+</section>
+<section class="container menu-section">
+    {% for dish_name, dish_list in dishes.items() %}
+        <div class="menu-category surface-card">
+            <div class="menu-category__header d-flex flex-wrap justify-content-between align-items-center">
+                <h2 class="menu-category__title">{{ dish_name }}</h2>
+                <span class="menu-category__badge">Всегда свежие блюда</span>
+            </div>
+            <div class="row g-4">
+                {% for dish in dish_list %}
+                    <div class="col-xl-4 col-md-6">
+                        <article class="menu-card">
+                            <div class="menu-card__image">
+                                <img src="{{ dish[2] }}" alt="{{ dish[0] }}">
+                            </div>
+                            <div class="menu-card__body">
+                                <div class="menu-card__heading d-flex justify-content-between align-items-start">
+                                    <h3 class="menu-card__title">{{ dish[0] }}</h3>
+                                    <span class="menu-card__price">{{ dish[3] }}₽</span>
+                                </div>
+                                <p class="menu-card__description">{{ dish[1] }}</p>
+                                <div class="menu-card__meta">
+                                    <span><i class="bi bi-speedometer"></i> {{ dish[4] }} г</span>
+                                    {% if dish[5] %}
+                                    <span><i class="bi bi-calendar3"></i> {{ dish[5].strftime('%d.%m.%Y') }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     {% endfor %}
-    </div>
-</center>
+</section>
 {% endblock %}
