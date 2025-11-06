@@ -49,7 +49,7 @@
 
 ### Контакты
 <div align="center">
-  <img src="docs/contacts.png" alt="Контакты" width="600"/>
+  <img src="docs/contacs.png" alt="Контакты" width="600"/>
   <p><em>Контактная информация и форма обратной связи</em></p>
 </div>
 
