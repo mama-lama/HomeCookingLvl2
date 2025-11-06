@@ -14,7 +14,7 @@ with open('security.json', 'r', encoding='utf8') as security:
 
 @app.route("/", methods=['GET'])
 def index():
-    return render_template("index.html", title='Главная')
+    return render_template("index.html", title='Главная', active_page='home')
 
 @app.route("/menu", methods=['GET'])
 def menu():
@@ -29,16 +29,16 @@ def menu():
             data[dish.type].append((dish.name, dish.content, dish.photo, dish.price,
                                     dish.number_of_grams, dish.created_date))
     db_sess.close()
-    return render_template("menu.html", title='Меню', dishes=data)
+    return render_template("menu.html", title='Меню', dishes=data, active_page='menu')
 
 @app.route("/location", methods=['GET'])
 def location():
-    return render_template("location.html", title='Месторасположение')
+    return render_template("location.html", title='Месторасположение', active_page='location')
 
 @app.route("/gallery", methods=['GET'])
 def gallery():
     photos = listdir('static/img/templates/')
-    return render_template("gallery.html", title='Наше кафе', photos=photos)
+    return render_template("gallery.html", title='Наше кафе', photos=photos, active_page='gallery')
 
 def main():
     db_session.global_init("db/database.db")
