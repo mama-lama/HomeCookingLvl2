@@ -37,19 +37,19 @@
 
 ### Меню кафе
 <div align="center">
-  <img src="docs/menu-section.png" alt="Меню кафе" width="600"/>
+  <img src="docs/menu.png" alt="Меню кафе" width="600"/>
   <p><em>Раздел меню с категориями блюд</em></p>
 </div>
 
 ### О нас
 <div align="center">
-  <img src="docs/about-section.png" alt="О кафе" width="600"/>
+  <img src="docs/mainPage.png" alt="О кафе" width="600"/>
   <p><em>Информация о кафе и команде</em></p>
 </div>
 
 ### Контакты
 <div align="center">
-  <img src="docs/contact-section.png" alt="Контакты" width="600"/>
+  <img src="docs/contacts.png" alt="Контакты" width="600"/>
   <p><em>Контактная информация и форма обратной связи</em></p>
 </div>
 
